@@ -1,0 +1,10 @@
+Model Name,Open weights,Has fast small version,Has thinking version,Can generate images,Can generate video,Voice assistance,Can be fine tuned,Research feature,Has Chinese influence,Runs on a laptop,Can search online,Has client application,Uncensored
+ChatGPT,no,yes,yes,yes,partially,yes,yes,yes,no,no,yes,yes,no
+Claude,no,no,yes,no,no,no,partially,partially,no,no,partially,yes,no
+Grok,no,no,yes,yes,no,yes,no,yes,no,no,yes,yes,yes
+Gemini,no,yes,yes,yes,partially,yes,yes,yes,no,no,yes,yes,no
+Gemma,yes,yes,no,no,no,no,yes,no,no,yes,no,no,no
+Llama,yes,yes,no,no,no,no,yes,no,no,yes,partially,partially,no
+Mistral,yes,yes,no,no,no,no,yes,no,no,yes,partially,yes,no
+DeepSeek,yes,no,yes,no,no,no,yes,no,yes,no,yes,yes,no
+Qwen,yes,yes,yes,yes,yes,no,yes,no,yes,yes,yes,yes,no
