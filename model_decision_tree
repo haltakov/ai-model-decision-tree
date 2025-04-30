@@ -1,0 +1,749 @@
+// AI Model Decision Tree
+digraph {
+	rankdir=LR
+	node [fillcolor=lightblue shape=ellipse style=filled]
+	edge [fontsize=10]
+	node_0_root_ [label="Care about
+Multilingual?"]
+	"node_1_node_0_root__->Yes" [label="Care about
+Code Generation?"]
+	node_0_root_ -> "node_1_node_0_root__->Yes" [label=Yes]
+	"node_2_node_1_node_0_root__->Yes_->Yes->Yes" [label="Care about
+Image Input?"]
+	"node_1_node_0_root__->Yes" -> "node_2_node_1_node_0_root__->Yes_->Yes->Yes" [label=Yes]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Yes_->Yes->Yes" -> "node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes_->Yes->Yes->Yes->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes_->Yes->Yes->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes_->Yes->Yes->Yes->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes_->Yes->Yes->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes_->Yes->Yes->Yes->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Yes_->Yes->Yes->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Yes_->Yes->Yes" -> "node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe_->Yes->Yes->Maybe->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe_->Yes->Yes->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe_->Yes->Yes->Maybe->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe_->Yes->Yes->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe_->Yes->Yes->Maybe->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->Maybe_->Yes->Yes->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Yes_->Yes->Yes" -> "node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No" [label=No]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No_->Yes->Yes->No->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No_->Yes->Yes->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No_->Yes->Yes->No->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No_->Yes->Yes->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No_->Yes->Yes->No->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Yes_->Yes->Yes->No_->Yes->Yes->No->No" [label=No]
+	"node_2_node_1_node_0_root__->Yes_->Yes->Maybe" [label="Care about
+Image Input?"]
+	"node_1_node_0_root__->Yes" -> "node_2_node_1_node_0_root__->Yes_->Yes->Maybe" [label=Maybe]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Yes_->Yes->Maybe" -> "node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes_->Yes->Maybe->Yes->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes_->Yes->Maybe->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes_->Yes->Maybe->Yes->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes_->Yes->Maybe->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes_->Yes->Maybe->Yes->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Yes_->Yes->Maybe->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Yes_->Yes->Maybe" -> "node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe_->Yes->Maybe->Maybe->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe_->Yes->Maybe->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe_->Yes->Maybe->Maybe->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe_->Yes->Maybe->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe_->Yes->Maybe->Maybe->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->Maybe_->Yes->Maybe->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Yes_->Yes->Maybe" -> "node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No" [label=No]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No_->Yes->Maybe->No->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No_->Yes->Maybe->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No_->Yes->Maybe->No->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No_->Yes->Maybe->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No_->Yes->Maybe->No->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->Maybe_->Yes->Maybe->No_->Yes->Maybe->No->No" [label=No]
+	"node_2_node_1_node_0_root__->Yes_->Yes->No" [label="Care about
+Image Input?"]
+	"node_1_node_0_root__->Yes" -> "node_2_node_1_node_0_root__->Yes_->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Yes_->Yes->No" -> "node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes_->Yes->No->Yes->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes_->Yes->No->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes_->Yes->No->Yes->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes_->Yes->No->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes_->Yes->No->Yes->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Yes_->Yes->No->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Yes_->Yes->No" -> "node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe_->Yes->No->Maybe->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe_->Yes->No->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe_->Yes->No->Maybe->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe_->Yes->No->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe_->Yes->No->Maybe->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->Maybe_->Yes->No->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Yes_->Yes->No" -> "node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No" [label=No]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No_->Yes->No->No->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No_->Yes->No->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No_->Yes->No->No->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No_->Yes->No->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No_->Yes->No->No->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Yes_->Yes->No_->Yes->No->No_->Yes->No->No->No" [label=No]
+	"node_1_node_0_root__->Maybe" [label="Care about
+Code Generation?"]
+	node_0_root_ -> "node_1_node_0_root__->Maybe" [label=Maybe]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->Yes" [label="Care about
+Image Input?"]
+	"node_1_node_0_root__->Maybe" -> "node_2_node_1_node_0_root__->Maybe_->Maybe->Yes" [label=Yes]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->Yes" -> "node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes_->Maybe->Yes->Yes->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes_->Maybe->Yes->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes_->Maybe->Yes->Yes->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes_->Maybe->Yes->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes_->Maybe->Yes->Yes->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Yes_->Maybe->Yes->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->Yes" -> "node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe_->Maybe->Yes->Maybe->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe_->Maybe->Yes->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe_->Maybe->Yes->Maybe->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe_->Maybe->Yes->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe_->Maybe->Yes->Maybe->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->Maybe_->Maybe->Yes->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->Yes" -> "node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No" [label=No]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No_->Maybe->Yes->No->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No_->Maybe->Yes->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No_->Maybe->Yes->No->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No_->Maybe->Yes->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No_->Maybe->Yes->No->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku
+Llama 3 70B
+Llama 3 8B" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Yes_->Maybe->Yes->No_->Maybe->Yes->No->No" [label=No]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe" [label="Care about
+Image Input?"]
+	"node_1_node_0_root__->Maybe" -> "node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe" [label=Maybe]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe" -> "node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes_->Maybe->Maybe->Yes->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes_->Maybe->Maybe->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes_->Maybe->Maybe->Yes->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes_->Maybe->Maybe->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes_->Maybe->Maybe->Yes->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Yes_->Maybe->Maybe->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe" -> "node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe_->Maybe->Maybe->Maybe->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe_->Maybe->Maybe->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe_->Maybe->Maybe->Maybe->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe_->Maybe->Maybe->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe_->Maybe->Maybe->Maybe->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->Maybe_->Maybe->Maybe->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe" -> "node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No" [label=No]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No_->Maybe->Maybe->No->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No_->Maybe->Maybe->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No_->Maybe->Maybe->No->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No_->Maybe->Maybe->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No_->Maybe->Maybe->No->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku
+Llama 3 70B
+Llama 3 8B" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->Maybe_->Maybe->Maybe->No_->Maybe->Maybe->No->No" [label=No]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->No" [label="Care about
+Image Input?"]
+	"node_1_node_0_root__->Maybe" -> "node_2_node_1_node_0_root__->Maybe_->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->No" -> "node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes_->Maybe->No->Yes->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes_->Maybe->No->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes_->Maybe->No->Yes->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes_->Maybe->No->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes_->Maybe->No->Yes->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Yes_->Maybe->No->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->No" -> "node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe_->Maybe->No->Maybe->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe_->Maybe->No->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe_->Maybe->No->Maybe->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe_->Maybe->No->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe_->Maybe->No->Maybe->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->Maybe_->Maybe->No->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->Maybe_->Maybe->No" -> "node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No" [label=No]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No_->Maybe->No->No->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No_->Maybe->No->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No_->Maybe->No->No->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No_->Maybe->No->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No_->Maybe->No->No->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku
+Llama 3 70B
+Llama 3 8B" shape=box]
+	"node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No" -> "leaf_node_3_node_2_node_1_node_0_root__->Maybe_->Maybe->No_->Maybe->No->No_->Maybe->No->No->No" [label=No]
+	"node_1_node_0_root__->No" [label="Care about
+Code Generation?"]
+	node_0_root_ -> "node_1_node_0_root__->No" [label=No]
+	"node_2_node_1_node_0_root__->No_->No->Yes" [label="Care about
+Image Input?"]
+	"node_1_node_0_root__->No" -> "node_2_node_1_node_0_root__->No_->No->Yes" [label=Yes]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->No_->No->Yes" -> "node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes_->No->Yes->Yes->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes_->No->Yes->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes_->No->Yes->Yes->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes_->No->Yes->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes_->No->Yes->Yes->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Yes_->No->Yes->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->No_->No->Yes" -> "node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe_->No->Yes->Maybe->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe_->No->Yes->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe_->No->Yes->Maybe->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe_->No->Yes->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe_->No->Yes->Maybe->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->Maybe_->No->Yes->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->No_->No->Yes" -> "node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No" [label=No]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No_->No->Yes->No->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No_->No->Yes->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No_->No->Yes->No->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No_->No->Yes->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No_->No->Yes->No->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku
+Llama 3 70B
+Llama 3 8B" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Yes_->No->Yes->No_->No->Yes->No->No" [label=No]
+	"node_2_node_1_node_0_root__->No_->No->Maybe" [label="Care about
+Image Input?"]
+	"node_1_node_0_root__->No" -> "node_2_node_1_node_0_root__->No_->No->Maybe" [label=Maybe]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->No_->No->Maybe" -> "node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes_->No->Maybe->Yes->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes_->No->Maybe->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes_->No->Maybe->Yes->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes_->No->Maybe->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes_->No->Maybe->Yes->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Yes_->No->Maybe->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->No_->No->Maybe" -> "node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe_->No->Maybe->Maybe->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe_->No->Maybe->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe_->No->Maybe->Maybe->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe_->No->Maybe->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe_->No->Maybe->Maybe->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->Maybe_->No->Maybe->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->No_->No->Maybe" -> "node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No" [label=No]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No_->No->Maybe->No->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No_->No->Maybe->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No_->No->Maybe->No->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No_->No->Maybe->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No_->No->Maybe->No->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku
+Llama 3 70B
+Llama 3 8B" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->Maybe_->No->Maybe->No_->No->Maybe->No->No" [label=No]
+	"node_2_node_1_node_0_root__->No_->No->No" [label="Care about
+Image Input?"]
+	"node_1_node_0_root__->No" -> "node_2_node_1_node_0_root__->No_->No->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->No_->No->No" -> "node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes_->No->No->Yes->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes_->No->No->Yes->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes_->No->No->Yes->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes_->No->No->Yes->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes_->No->No->Yes->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Yes_->No->No->Yes->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->No_->No->No" -> "node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe_->No->No->Maybe->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe_->No->No->Maybe->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe_->No->No->Maybe->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe_->No->No->Maybe->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe_->No->No->Maybe->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->Maybe_->No->No->Maybe->No" [label=No]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No" [label="Care about
+Tool Use?"]
+	"node_2_node_1_node_0_root__->No_->No->No" -> "node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No" [label=No]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No_->No->No->No->Yes" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No_->No->No->No->Yes" [label=Yes]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No_->No->No->No->Maybe" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No_->No->No->No->Maybe" [label=Maybe]
+	"leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No_->No->No->No->No" [label="Models:
+GPT-4o
+GPT-4 Turbo
+Gemini 1.5 Pro
+Gemini 1.5 Flash
+Claude 3 Opus
+Claude 3 Sonnet
+Claude 3 Haiku
+Llama 3 70B
+Llama 3 8B" shape=box]
+	"node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No" -> "leaf_node_3_node_2_node_1_node_0_root__->No_->No->No_->No->No->No_->No->No->No->No" [label=No]
+}
